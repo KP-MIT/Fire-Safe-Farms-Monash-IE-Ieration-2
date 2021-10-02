@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <title>@ViewBag.Title - Fire Safe Farms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="icon" href="~/Image/logo.png">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+    @*@<div class="navigationbar" id="Topnav">
+            <nav class="navigationWrapper" style="width:100%">
+                <ul class="navigation" style="text-align:left">
+                    <li class="parent"> @Html.ActionLink("Home", "Home", "Home")</li>
+                    <li class="parent">@Html.ActionLink("Protect Farm lands", "Analytics", "Home")</li>
+                    <li class="parent"> @Html.ActionLink("Check Fire Danger", "Map", "Home")</li>
+                </ul>
+                <img src="~/Image/logo.png" style="height:5%;width:5%;margin-right:48%" />
+            </nav>
+    </div>
+        <style>
+            .navigationbar {
+                font-family: "Roboto", sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 0;
+                background-color: #3e290c;
+                position: sticky;
+            }
+
+            .navigationWrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px;
+                background-color: #3e290c;
+                overflow: hidden;
+                width: 600px;
+            }
+
+                .navigationWrapper .navigation {
+                    text-align: center;
+                    display: flex;
+                    list-style-type: none;
+                    border-bottom: 0;
+                }
+
+                    .navigationWrapper .navigation li {
+                        opacity: 1;
+                        list-style-type: none;
+                        color: black;
+                        text-decoration: none;
+                        transition: all 0.3s ease-in-out;
+                        font-family: American Typewriter, serif;
+                    }
+
+                    .navigationWrapper .navigation .parent {
+                        font-size: 22px;
+                        padding: 20px 40px;
+                        cursor: pointer;
+                    }
+
+                        .navigationWrapper .navigation .parent:hover {
+                            transform: scale(1.1);
+                        }
+        </style> *@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="Topnav" style="height:92px;">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="width:auto;height:89px;padding:30px" href="@Url.Action("Home", "Home")">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="width:auto;padding:30px;height:89px;"> Safety from Bushfire </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action("Map", "Home")"> Check Fire Danger </a>
+                            <a class="dropdown-item" href="@Url.Action("Analytics", "Home")"> Protect Farm lands </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("Home", "Home")"> Emergency Contacts </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand" style="margin-right:45%" id="projectLogo" href="@Url.Action("Home", "Home")">
+                <p style="opacity:0;"> Fire Safe Farms</p>
+            </a>
+        </nav>
+
+    <script src="~/Scripts/Home.js"></script>
+
+
+
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#f2f2f2; border-color: white; box-shadow:0px 0px 3px 0px">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+
+                                        <li>@Html.ActionLink("Compare", "About", "Home", new { @style = "color:black;" })</li>
+                                        <li>@Html.ActionLink("Why Sports ?", "About", "Home", new { @style = "color:black;" })</li>
+                                        <li>@Html.ActionLink("About Us", "Contact", "Home", new { @style = "color:black;" })</li>
+                                        <div class="btn-group" style="padding:8.25px 6px 6px 4.5px;">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:#f2f2f2; ">
+                                                <b style="color:black;font-weight:normal;">Language</b>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li style="color:black;"><a href="#">English</a></li>
+                                                <li style="color:black;"><a href="#">Chinese</a></li>
+                                            </ul>
+                                        </div>
+                                    </ul>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="@Url.Action("Home", "Home")"> Fire Safe Farms </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Home", "Home")">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Home", "Home")">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Home", "Home")">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+                                    @Html.Partial("_LoginPartial")
+                                </div>
+                            </div>
+                        </div>*@
+    <div>
+
+        @RenderBody()
+        <hr />
+        <footer class="container body-content">
+            <p>&copy; @DateTime.Now.Year - MA 28 Epoch </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
